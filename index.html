@@ -14,19 +14,21 @@
   header .plane{font-size:2rem;display:inline-block;animation:fly 5s ease-in-out infinite}
   @keyframes fly{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-10px) rotate(4deg)}}
   h1{margin:2px 0 2px;font-size:1.9rem;letter-spacing:.5px}
-  .sub{margin:0 0 18px;font-weight:700;color:#3f6a94;font-size:1rem}
-  a.tile{display:block;text-decoration:none;color:#17395c;background:#fff;border:4px solid #17395c;border-radius:24px;
-         margin:0 0 18px;overflow:hidden;box-shadow:0 7px 0 rgba(23,57,92,.35);transition:transform .12s}
-  a.tile:active{transform:translateY(4px);box-shadow:0 3px 0 rgba(23,57,92,.35)}
-  .art{height:130px;position:relative;overflow:hidden;border-bottom:4px solid #17395c}
-  .art .big{position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font-size:5rem;
-            animation:bob 3s ease-in-out infinite}
-  @keyframes bob{0%,100%{transform:translate(-50%,-52%) rotate(-4deg)}50%{transform:translate(-50%,-56%) rotate(5deg)}}
-  .txt{padding:12px 16px 14px}
-  .txt h2{margin:0 0 4px;font-size:1.25rem}
-  .txt p{margin:0;font-size:.95rem;font-weight:700;color:#3f6a94;line-height:1.35}
-  .play{display:inline-block;margin-top:10px;background:#ff8c42;border:3px solid #17395c;border-radius:999px;
-        padding:6px 18px;font-weight:800;font-size:1rem;box-shadow:0 4px 0 #b35617}
+  .sub{margin:0 0 16px;font-weight:700;color:#3f6a94;font-size:1rem}
+  section{margin:0 0 16px}
+  h2.cat{display:flex;align-items:center;gap:8px;margin:0;font-size:1.05rem;letter-spacing:.5px;
+         border:4px solid #17395c;border-bottom-width:3px;border-radius:18px 18px 0 0;padding:9px 14px;color:#17395c}
+  .rows{background:#fff;border:4px solid #17395c;border-top:none;border-radius:0 0 20px 20px;overflow:hidden;
+        box-shadow:0 6px 0 rgba(23,57,92,.32)}
+  a.row{display:flex;align-items:center;gap:12px;text-decoration:none;color:#17395c;
+        padding:9px 14px;min-height:58px;background:#fff}
+  a.row + a.row{border-top:3px solid #e3eef7}
+  a.row:active{background:#fff1e3}
+  .row .icon{font-size:1.7rem;line-height:1;flex:0 0 auto}
+  .row .name{flex:1 1 auto;font-weight:700;font-size:1.05rem;line-height:1.2}
+  .row .go{flex:0 0 auto;background:#ff8c42;border:3px solid #17395c;border-radius:999px;
+           padding:5px 14px;font-weight:800;font-size:.9rem;box-shadow:0 3px 0 #b35617}
+  a.row:active .go{box-shadow:none;transform:translateY(3px)}
   footer{text-align:center;font-size:.8rem;color:#3f6a94;font-weight:700;padding-top:6px}
 </style>
 </head>
@@ -38,135 +40,59 @@
     <p class="sub">pick a machine and go! 🚦</p>
   </header>
 
-  <a class="tile" href="/airport-adventure/">
-    <div class="art" style="background:linear-gradient(180deg,#bfe6ff 0 55%,#8ed081 55%)">
-      <span class="big">✈️</span>
-      <span style="position:absolute;left:12%;bottom:10px;font-size:1.6rem">🧳</span>
-      <span style="position:absolute;right:12%;bottom:12px;font-size:1.5rem">🛫</span>
+  <section>
+    <h2 class="cat" style="background:#bfe6ff">✈️ SKY GAMES</h2>
+    <div class="rows">
+      <a class="row" href="/airport-adventure/" title="Help Maya catch her flight: check-in, security, boarding… and TAKE OFF! You are the pilot.">
+        <span class="icon">✈️</span><span class="name">Airport Adventure</span><span class="go">▶ PLAY</span>
+      </a>
+      <a class="row" href="/tower-time/" title="You are the TOWER! Draw flight paths with your finger and land every plane. Mind the wind!">
+        <span class="icon">🗼</span><span class="name">Tower Time</span><span class="go">▶ PLAY</span>
+      </a>
+      <a class="row" href="/final-approach/" title="Fly real flight physics! Land the trainer, the airliner or the jet — pilot view or outside view, day or night.">
+        <span class="icon">🛬</span><span class="name">Final Approach</span><span class="go">▶ PLAY</span>
+      </a>
+      <a class="row" href="/sky-captain/" title="Fly your own plane! Take off, turn and climb, chase rainbow hoops over the islands, land on water or runway.">
+        <span class="icon">🛩️</span><span class="name">Sky Captain</span><span class="go">▶ PLAY</span>
+      </a>
     </div>
-    <div class="txt">
-      <h2>Airport Adventure</h2>
-      <p>Help Maya catch her flight: check-in, security, boarding… and TAKE OFF! You are the pilot.</p>
-      <span class="play">▶ PLAY</span>
-    </div>
-  </a>
+  </section>
 
-  <a class="tile" href="/tower-time/">
-    <div class="art" style="background:linear-gradient(180deg,#bfe6ff 0 45%,#8ed081 45%)">
-      <span class="big">🗼</span>
-      <span style="position:absolute;left:14%;top:12px;font-size:1.5rem">🛬</span>
-      <span style="position:absolute;right:14%;top:14px;font-size:1.4rem">🌬️</span>
+  <section>
+    <h2 class="cat" style="background:#f7d9a8">🚜 DIG &amp; BUILD</h2>
+    <div class="rows">
+      <a class="row" href="/digger-dock/" title="Drive a real excavator with gear levers! Dig up buried treasure and load the truck.">
+        <span class="icon">🚜</span><span class="name">Digger Dock</span><span class="go">▶ PLAY</span>
+      </a>
+      <a class="row" href="/excavator-pro/" title="Four real hydraulic levers: boom, stick, bucket and swing! Dig the wall and load the haul truck like a pro.">
+        <span class="icon">🏗️</span><span class="name">Excavator Pro</span><span class="go">▶ PLAY</span>
+      </a>
     </div>
-    <div class="txt">
-      <h2>Tower Time</h2>
-      <p>You are the TOWER! Draw flight paths with your finger and land every plane. Mind the wind!</p>
-      <span class="play">▶ PLAY</span>
-    </div>
-  </a>
+  </section>
 
-  <a class="tile" href="/digger-dock/">
-    <div class="art" style="background:linear-gradient(180deg,#bfe6ff 0 52%,#c98d4f 52%)">
-      <span class="big">🚜</span>
-      <span style="position:absolute;left:12%;bottom:10px;font-size:1.5rem">💎</span>
-      <span style="position:absolute;right:12%;bottom:12px;font-size:1.5rem">🪣</span>
+  <section>
+    <h2 class="cat" style="background:#c1ecd6">🌍 WORLD EXPLORERS</h2>
+    <div class="rows">
+      <a class="row" href="/world-treasures/" title="Explore the world map! Discover which country gives us oil, gold, coffee, diamonds — and deliver them!">
+        <span class="icon">🌍</span><span class="name">World Treasures</span><span class="go">▶ PLAY</span>
+      </a>
+      <a class="row" href="/earthops-game/" title="Be a resource detective! Track lithium, copper and sunshine on the world map, solve missions, stamp your passport.">
+        <span class="icon">🧭</span><span class="name">EarthOps Kid Atlas</span><span class="go">▶ PLAY</span>
+      </a>
     </div>
-    <div class="txt">
-      <h2>Digger Dock</h2>
-      <p>Drive a real excavator with gear levers! Dig up buried treasure and load the truck.</p>
-      <span class="play">▶ PLAY</span>
-    </div>
-  </a>
+  </section>
 
-  <a class="tile" href="/excavator-pro/">
-    <div class="art" style="background:linear-gradient(180deg,#bfe6ff 0 45%,#d9b36c 45%)">
-      <span class="big">🏗️</span>
-      <span style="position:absolute;left:12%;top:12px;font-size:1.4rem">🪣</span>
-      <span style="position:absolute;right:12%;bottom:12px;font-size:1.5rem">🚛</span>
+  <section>
+    <h2 class="cat" style="background:#f7cfe1">🎨 CREATIVE FUN</h2>
+    <div class="rows">
+      <a class="row" href="/modest-atelier/" title="Run a little fashion studio! Style modest looks for real client wishes — colours, fabrics, occasions.">
+        <span class="icon">🧕</span><span class="name">Modest Atelier</span><span class="go">▶ PLAY</span>
+      </a>
+      <a class="row" href="/pizza-pronto/" title="Run your pizzeria! Build pizzas by hand, bake them just right, and deliver before patience runs out.">
+        <span class="icon">🍕</span><span class="name">Pizza Pronto</span><span class="go">▶ PLAY</span>
+      </a>
     </div>
-    <div class="txt">
-      <h2>Excavator Pro</h2>
-      <p>Four real hydraulic levers: boom, stick, bucket and swing! Dig the wall and load the haul truck like a pro.</p>
-      <span class="play">▶ PLAY</span>
-    </div>
-  </a>
-
-  <a class="tile" href="/modest-atelier/">
-    <div class="art" style="background:linear-gradient(180deg,#f2e7d8 0 55%,#e0c9ab 55%)">
-      <span class="big">🧕</span>
-      <span style="position:absolute;left:12%;bottom:10px;font-size:1.5rem">👗</span>
-      <span style="position:absolute;right:12%;bottom:12px;font-size:1.5rem">🌼</span>
-    </div>
-    <div class="txt">
-      <h2>Modest Atelier</h2>
-      <p>Run a little fashion studio! Style modest looks for real client wishes — colours, fabrics, occasions.</p>
-      <span class="play">▶ PLAY</span>
-    </div>
-  </a>
-
-  <a class="tile" href="/final-approach/">
-    <div class="art" style="background:linear-gradient(180deg,#7db8e8 0 55%,#729a5e 55%)">
-      <span class="big">🛬</span>
-      <span style="position:absolute;left:12%;top:12px;font-size:1.4rem">✈️</span>
-      <span style="position:absolute;right:12%;bottom:12px;font-size:1.5rem">🌙</span>
-    </div>
-    <div class="txt">
-      <h2>Final Approach</h2>
-      <p>Fly real flight physics! Land the trainer, the airliner or the jet — pilot view or outside view, day or night.</p>
-      <span class="play">▶ PLAY</span>
-    </div>
-  </a>
-
-  <a class="tile" href="/sky-captain/">
-    <div class="art" style="background:linear-gradient(180deg,#a9dcf7 0 62%,#77a55e 62%)">
-      <span class="big">✈️</span>
-      <span style="position:absolute;left:12%;top:14px;font-size:1.5rem">⭕</span>
-      <span style="position:absolute;right:12%;bottom:12px;font-size:1.5rem">🏝️</span>
-    </div>
-    <div class="txt">
-      <h2>Sky Captain</h2>
-      <p>Fly your own plane! Take off, turn and climb, chase rainbow hoops over the islands, land on water or runway.</p>
-      <span class="play">▶ PLAY</span>
-    </div>
-  </a>
-
-  <a class="tile" href="/pizza-pronto/">
-    <div class="art" style="background:linear-gradient(180deg,#ffd98f 0 55%,#e8b96a 55%)">
-      <span class="big">🍕</span>
-      <span style="position:absolute;left:12%;bottom:10px;font-size:1.5rem">🛵</span>
-      <span style="position:absolute;right:12%;top:12px;font-size:1.4rem">🔥</span>
-    </div>
-    <div class="txt">
-      <h2>Pizza Pronto</h2>
-      <p>Run your pizzeria! Build pizzas by hand, bake them just right, and deliver before patience runs out.</p>
-      <span class="play">▶ PLAY</span>
-    </div>
-  </a>
-
-  <a class="tile" href="/world-treasures/">
-    <div class="art" style="background:linear-gradient(180deg,#cfe8f4 0 55%,#aee3dd 55%)">
-      <span class="big">🌍</span>
-      <span style="position:absolute;left:12%;bottom:10px;font-size:1.4rem">💎</span>
-      <span style="position:absolute;right:12%;bottom:12px;font-size:1.4rem">☕</span>
-    </div>
-    <div class="txt">
-      <h2>World Treasures</h2>
-      <p>Explore the world map! Discover which country gives us oil, gold, coffee, diamonds — and deliver them!</p>
-      <span class="play">▶ PLAY</span>
-    </div>
-  </a>
-
-  <a class="tile" href="/earthops-game/">
-    <div class="art" style="background:linear-gradient(180deg,#a9dfda 0 55%,#8ed081 55%)">
-      <span class="big">🧭</span>
-      <span style="position:absolute;left:12%;bottom:10px;font-size:1.4rem">🔋</span>
-      <span style="position:absolute;right:12%;bottom:12px;font-size:1.4rem">⛏️</span>
-    </div>
-    <div class="txt">
-      <h2>EarthOps Kid Atlas</h2>
-      <p>Be a resource detective! Track lithium, copper and sunshine on the world map, solve missions, stamp your passport.</p>
-      <span class="play">▶ PLAY</span>
-    </div>
-  </a>
+  </section>
 
   <footer>made with 💛 for little pilots, controllers &amp; builders</footer>
 </div>
